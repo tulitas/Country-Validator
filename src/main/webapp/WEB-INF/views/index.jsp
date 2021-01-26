@@ -14,17 +14,14 @@
 
 <div class="container">
 
-        <form action="${pageContext.request.contextPath}result" method="post">
+        <form action="${pageContext.request.contextPath}validate" method="post">
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="inputPassport">Car technical passport number</label>
-                    <input type="text" class="form-control" id="inputPassport" name="inputPassport"
-                           placeholder="Car technical passport number">
+                    <label for="inputCode">Phone number</label>
+                    <input type="text" class="form-control" id="inputCode" name="inputCode"
+                           placeholder="Phone number">
                 </div>
-                <div class="form-group">
-                    <label for="inputDate">Date of birth</label>
-                    <input type="date" class="form-control" id="inputDate" name="inputDate">
-                </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
