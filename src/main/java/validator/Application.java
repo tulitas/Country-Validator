@@ -15,15 +15,12 @@ import java.io.IOException;
 @Configuration
 public class Application extends SpringBootServletInitializer {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         SpringApplication.run(Application.class, args);
-        new ValidationService();
-
     }
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder) {
-
         return applicationBuilder.sources(Application.class);
     }
 }

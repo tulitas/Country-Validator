@@ -23,16 +23,18 @@ public class ValidationService {
             Elements columns = row.select("td");
             if (columns.size() > 2) {
                 String name = columns.get(0).text();
-                String code = columns.get(1).text();
+                String code = columns.get(1).text().replace(" ", "");
                 codes.put(code, name);
             }
         }
-//        codes.forEach((n,c) -> System.out.println(n + " -> " + c));
-        codeResult = codes.get(inputCode);
-    }
-
-    public ValidationService() throws IOException {
-
+        codes.forEach((n, c) -> System.out.println(n + " -> " + c));
+        if(codes.get(inputCode) != null) {
+            codeResult = codes.get(inputCode);
+        }else if (codes.containsKey(inputCode)){
+            System.out.println("bad");
+        }else {
+            System.out.println("key not6 exist");
+        }
     }
 
     public String getCodeResult() {
