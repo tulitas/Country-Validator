@@ -16,7 +16,7 @@ public class ValidationController {
     }
 
     @RequestMapping(value = "/validate")
-    public String ValidateProces(String inputCode, Model model) throws IOException {
+    public String ValidateProcess(String inputCode, Model model) throws IOException {
         ValidationService validationService = new ValidationService(inputCode);
         model.addAttribute("validationResult", validationService.getCodeResult());
         return "/result";
