@@ -14,16 +14,18 @@
 
 <div class="container">
 
-        <form action="${pageContext.request.contextPath}validate" method="post">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="inputCode">Phone number</label>
-                    <input type="text" class="form-control" id="inputCode" name="inputCode"
-                           placeholder="Phone number">
-                </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+    <form action="${pageContext.request.contextPath}validate" method="post">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <input type="tel" name="inputPhone" placeholder="+8888 8888888"
+                       pattern="[+][0-9]{3,4} [0-9]{7}"
+                       maxlength="13"  title="Twelve digits code" required/>
+                <label style="font-size:9px;padding-left:20px"> Country code 3 or 4 dig.: 081 222 2224  </label>
             </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
 
     </form>
     </div>
