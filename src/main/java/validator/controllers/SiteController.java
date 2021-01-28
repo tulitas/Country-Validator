@@ -12,5 +12,9 @@ public class SiteController {
         return new ModelAndView("index");
     }
 
+    @RequestMapping("/test")
+    public ModelAndView test() {
+        return new ModelAndView("test");
+    }
 
 }

@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class TableLoad {
     private Map<String, String> codes = new HashMap<>();
+    private Integer hashMapSize = 0;
     public TableLoad() throws IOException {
         Document document = Jsoup.connect("https://en.wikipedia.org/wiki/List_of_country_calling_codes").get();
         Element table = document.select("table.wikitable").get(1);
@@ -26,6 +27,7 @@ public class TableLoad {
             }
         }
         codes.forEach((n, c) -> System.out.println(n + " -> " + c));
+        hashMapSize = codes.size();
     }
 
     public Map<String, String> getCodes() {
@@ -34,5 +36,13 @@ public class TableLoad {
 
     public void setCodes(Map<String, String> codes) {
         this.codes = codes;
+    }
+
+    public Integer getHashMapSize() {
+        return hashMapSize;
+    }
+
+    public void setHashMapSize(Integer hashMapSize) {
+        this.hashMapSize = hashMapSize;
     }
 }
