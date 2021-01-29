@@ -11,7 +11,11 @@
     <title>Result</title>
 </head>
 <body>
-${validationResult}
+<div class="container">
+    ${validationResult}
+</div>
+
+
 </body>
 
 </html>

@@ -10,8 +10,14 @@
 <head>
     <title>Result</title>
 </head>
-<body>
-${testResult}
+<body style="background: dimgrey">
+<h2 align="center">Test Page</h2>
+<div class="container" >
+    <div class="col-sm-2" >
+        In list ${testResult} countries <br>
+    </div>
+
+</div>
 </body>
 
 </html>
