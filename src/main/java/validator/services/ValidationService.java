@@ -11,11 +11,7 @@ public class ValidationService {
     public ValidationService(String inputCode) throws IOException {
 
 //        inputCode = inputCode.substring(0, inputCode.length() - 8);
-
-
         if (inputCode.indexOf(" ") > 0) inputCode = inputCode.substring(0, inputCode.indexOf(" "));
-
-
         TableLoad tableLoad = new TableLoad();
         if (tableLoad.getCodes().get(inputCode) != null) {
             codeResult = tableLoad.getCodes().get(inputCode);
@@ -31,6 +27,4 @@ public class ValidationService {
     public void setCodeResult(String codeResult) {
         this.codeResult = codeResult;
     }
-
-
 }

@@ -12,13 +12,33 @@
     <script type="text/JavaScript"
             src="${pageContext.request.contextPath}/resources/js/jquery-1.9.1.min.js">
     </script>
+<%--    <script type="text/javascript">--%>
+<%--        function doAjax() {--%>
+<%--            var inputText = $("#input_str").val();--%>
+<%--            $.ajax({--%>
+<%--                url: 'validate',--%>
+<%--                type: 'GET',--%>
+<%--                dataType: 'json',--%>
+<%--                contentType: 'application/json',--%>
+<%--                mimeType: 'application/json',--%>
+<%--                data: ({--%>
+<%--                    inputPhone: inputText--%>
+<%--                }),--%>
+<%--                success: function (data) {--%>
+<%--                    var result = '"' + data.inputPhone + '", ' + data.count + ' characters';--%>
+
+<%--                    $("#result_text").text(result);--%>
+<%--                }--%>
+<%--            });--%>
+<%--        }--%>
+<%--    </script>--%>
     <script type="text/javascript">
         function doAjax() {
 
             var inputText = $("#input_str").val();
 
             $.ajax({
-                url : 'testAjax',
+                url : 'validate',
                 type: 'GET',
                 dataType: 'json',
                 contentType: 'application/json',
@@ -36,30 +56,26 @@
     </script>
 </head>
 <body>
-
 <div class="container">
-
-
-    <form action="${pageContext.request.contextPath}validate" method="post">
-
+    <form action="${pageContext.request.contextPath}validate" method="get">
         <div class="col-sm-6">
             <div class="form-group">
-                <input type="tel" name="inputPhone" placeholder="+8888 88888888" class="form-control"
-                       pattern="[+][0-9]{3,6} [0-9]{8}"
+                <input type="tel"  placeholder="+8888 88888888" class="form-control"
+                       pattern="[+][0-9]{3,6} [0-9]{8}" id="input_str"
                        maxlength="16" title="8 digits phone" required/>
                 <label style="font-size:9px;padding-left:20px"> Country code 3 up to 6 dig.: 081 2222224 </label>
             </div>
-
-            <button type="submt" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" value="OK" onclick="doAjax()">Submit</button>
             <a href="${pageContext.request.contextPath}/makeTest"
                class="btn btn-primary" type="button" aria-pressed="true">Test Page</a>
         </div>
-
     </form>
+    <p id="result_text"></p>
 </div>
-<a href="test.jsp">test</a>
-<input id="input_str" type="text">
-<button type="button" class="btn btn-primary" value="OK" onclick="doAjax()">Do ajax</button>
-<p id="result_text"></p>
+
+<%--<h3>Enter text:</h3>--%>
+<%--<input id="input_str2" type="text">--%>
+<%--<input type="button" value="OK" onclick="doAjax()">--%>
+<%--<p id="result_text2"></p>--%>
 </body>
 </html>

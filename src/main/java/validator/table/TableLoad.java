@@ -17,7 +17,6 @@ public class TableLoad {
         Element table = document.select("table.wikitable").get(1);
         Elements body = table.select("tbody");
         Elements rows = body.select("tr");
-
         for (Element row : rows) {
             Elements columns = row.select("td");
             if (columns.size() > 2) {
@@ -26,7 +25,7 @@ public class TableLoad {
                 codes.put(code, name);
             }
         }
-        codes.forEach((n, c) -> System.out.println(n + " -> " + c));
+//        codes.forEach((n, c) -> System.out.println(n + " -> " + c));
         hashMapSize = codes.size();
     }
 
