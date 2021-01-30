@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import validator.services.Response;
 import validator.services.ValidationService;
 
@@ -26,14 +27,12 @@ public class ValidationController {
     }
 
     @RequestMapping(value = "/testAjax", method = RequestMethod.GET)
-    public Response TestAjax(@RequestParam String test, Model model) {
+    public @ResponseBody Response TestAjax(@RequestParam String text) {
         Response result = new Response();
-        System.out.println(test);
-        if (test != null) {
-            result.setTest(test);
-            result.setCount(test.length());
+        if (text != null) {
+            result.setText(text);
+            result.setCount(text.length());
         }
-
         return result;
     }
 }

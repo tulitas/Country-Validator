@@ -3,7 +3,7 @@ package validator.services;
 public class Response {
 	
 	private int count;
-	private String test;
+	private String text;
 	
 	public int getCount() {
 		return count;
@@ -11,10 +11,10 @@ public class Response {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	public String getTest() {
-		return test;
+	public String getText() {
+		return text;
 	}
-	public void setTest(String test) {
-		this.test = test;
+	public void setText(String text) {
+		this.text = text;
 	}
 }

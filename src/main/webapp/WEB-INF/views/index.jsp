@@ -24,7 +24,7 @@
                 contentType: 'application/json',
                 mimeType: 'application/json',
                 data : ({
-                    test: inputText
+                    text: inputText
                 }),
                 success: function (data) {
 
@@ -59,7 +59,7 @@
 </div>
 <a href="test.jsp">test</a>
 <input id="input_str" type="text">
-<button type="button" class="btn btn-primary" onclick="doAjax()">Do ajax</button>
+<button type="button" class="btn btn-primary" value="OK" onclick="doAjax()">Do ajax</button>
 <p id="result_text"></p>
 </body>
 </html>
