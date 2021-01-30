@@ -10,13 +10,15 @@
 <head>
     <title>Result</title>
 </head>
-<body style="background: dimgrey">
+<body>
 <h2 align="center">Test Page</h2>
 <div class="container" >
     <div class="col-sm-2" >
         In list ${testResult} countries <br>
+        Your table source is:  ${link}
     </div>
-
+    <a href="${pageContext.request.contextPath}/"
+       class="btn btn-primary" type="button" aria-pressed="true">Home</a>
 </div>
 </body>
 

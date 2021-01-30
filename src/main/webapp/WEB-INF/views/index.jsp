@@ -48,7 +48,7 @@
                 }),
                 success: function (data) {
 
-                    var result = '"'+data.text+'", '+data.count+' characters';
+                    var result = '"'+data.text+'"';
                     $("#result_text").text(result);
                 }
             });
@@ -61,9 +61,9 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <input type="tel"  placeholder="+8888 88888888" class="form-control"
-                       pattern="[+][0-9]{3,6} [0-9]{8}" id="input_str"
+                       pattern="[+][0-9]{2,6} [0-9]{8}" id="input_str"
                        maxlength="16" title="8 digits phone" required/>
-                <label style="font-size:9px;padding-left:20px"> Country code 3 up to 6 dig.: 081 2222224 </label>
+                <label style="font-size:9px;padding-left:20px"> Country code 2 up to 6 dig.: 081 22222222 </label>
             </div>
             <button type="button" class="btn btn-primary" value="OK" onclick="doAjax()">Submit</button>
             <a href="${pageContext.request.contextPath}/makeTest"
@@ -73,9 +73,5 @@
     <p id="result_text"></p>
 </div>
 
-<%--<h3>Enter text:</h3>--%>
-<%--<input id="input_str2" type="text">--%>
-<%--<input type="button" value="OK" onclick="doAjax()">--%>
-<%--<p id="result_text2"></p>--%>
 </body>
 </html>
