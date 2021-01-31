@@ -1,6 +1,7 @@
 package validator.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,11 +27,21 @@ public class ValidationController {
         TableLoad tableLoad = new TableLoad();
         if (tableLoad.getCodes().get(text) != null) {
             result.setText(tableLoad.getCodes().get(text));
-        } else if (tableLoad.getCodes().containsKey(text)) {
-            result.setText(String.valueOf(tableLoad.getCodes().containsKey(text)));
         } else result.setText(tableLoad.getCodes().getOrDefault(text, message));
-            return result;
+        return result;
 
+    }
+
+    @RequestMapping(value = "/makeTest", method = RequestMethod.GET)
+    public String test(Model model) throws IOException {
+        TableLoad tableLoad = new TableLoad();
+        Integer count = tableLoad.getHashMapSize();
+        String link = tableLoad.getLink();
+        String tableName = tableLoad.getTableName();
+        model.addAttribute("count", count);
+        model.addAttribute("link", link);
+        model.addAttribute("tableName", tableName);
+        return "test";
     }
 
     String getMessage() {
