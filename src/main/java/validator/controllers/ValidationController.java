@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import validator.services.Response;
 import validator.table.TableLoad;
-
-
 import java.io.IOException;
 
 

@@ -26,7 +26,7 @@ public class TableLoad {
                 codes.put(code, name);
             }
         }
-//        codes.forEach((n, c) -> System.out.println(n + " -> " + c));
+        codes.forEach((n, c) -> System.out.println(n + " -> " + c));
         hashMapSize = codes.size();
     }
 
