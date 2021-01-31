@@ -21,7 +21,6 @@ public class ValidationController {
     @RequestMapping(value = "/validate", method = RequestMethod.GET)
     public @ResponseBody
     Response getCharNum(@RequestParam String text) throws IOException {
-
         Response result = new Response();
         if (text.indexOf(" ") > 0) text = text.substring(0, text.indexOf(" "));
         TableLoad tableLoad = new TableLoad();
@@ -29,7 +28,6 @@ public class ValidationController {
             result.setText(tableLoad.getCodes().get(text));
         } else result.setText(tableLoad.getCodes().getOrDefault(text, message));
         return result;
-
     }
 
     @RequestMapping(value = "/makeTest", method = RequestMethod.GET)

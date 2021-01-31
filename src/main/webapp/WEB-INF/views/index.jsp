@@ -15,21 +15,18 @@
 
     <script type="text/javascript">
         function doAjax() {
-
-            var inputText = $("#input_str").val();
-
+            let inputText = $("#input_str").val();
             $.ajax({
-                url : 'validate',
+                url: 'validate',
                 type: 'GET',
                 dataType: 'json',
                 contentType: 'application/json',
                 mimeType: 'application/json',
-                data : ({
+                data: ({
                     text: inputText
                 }),
                 success: function (data) {
-
-                    var result = '"'+data.text+'"';
+                    let result = '"' + data.text + '"';
                     $("#result_text").text(result);
                 }
             });
@@ -41,7 +38,7 @@
     <form action="${pageContext.request.contextPath}validate" method="get">
         <div class="col-sm-6">
             <div class="form-group">
-                <input type="tel"  placeholder="8888 88888888" class="form-control"
+                <input type="tel" placeholder="8888 88888888" class="form-control"
                        pattern="[0-9]{1,6} [0-9]{8}" id="input_str"
                        maxlength="16" title="8 digits phone" required/>
                 <label style="font-size:9px;padding-left:20px"> Country code 1 up to 6 dig.: 081 22222222 </label>
@@ -53,6 +50,5 @@
     </form>
     <p id="result_text"></p>
 </div>
-
 </body>
 </html>

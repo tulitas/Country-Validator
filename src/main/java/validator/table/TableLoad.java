@@ -15,6 +15,7 @@ public class TableLoad {
     private String tableName = "tabpd5";
     private Integer hashMapSize = 0;
     private Document document = Jsoup.connect(link).get();
+
     public TableLoad() throws IOException {
         Element table = document.select("table." + tableName).get(1);
         Elements body = table.select("tbody");
@@ -24,11 +25,8 @@ public class TableLoad {
             if (columns.size() > 2) {
                 String name = columns.get(1).text();
                 String code = columns.get(2).text().replace(" ", "");
-//                int plusCount = (int) code.chars().filter(x -> x == '+').count();
-//                if (plusCount > 1) {
-//                    for (String codeEntry : code.split(",")) { codes.put(codeEntry, name); }
-//                } else {
-                {codes.put(code, name);
+                {
+                    codes.put(code, name);
                 }
             }
         }
